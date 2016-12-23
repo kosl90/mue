@@ -2,6 +2,7 @@
   <button
     class="btn"
     :class="mClass"
+    :disabled="disabled"
     :data-toggle="toggle ? 'button' : false"
     @click="handleClick($event)"
   >
