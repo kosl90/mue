@@ -4,6 +4,8 @@
     <br>
     <div>{{ msg }}</div>
     <m-button @click="handleClick(blockBtn)" char="warning" block>{{ blockBtn }}</m-button>
+    <m-button char="secondary" disabled>{{ disabledBtn }}</m-button>
+    <m-button char="link">{{ linkBtn }}</m-button>
     <m-button @click="handleClick(dangerBtn)" char="danger">{{ dangerBtn }}</m-button>
     <m-button @click="handleClick(infoBtn)" char="info">{{ infoBtn }}</m-button>
     <m-button @click="handleClick(secondaryBtn)" char="secondary">{{ secondaryBtn }}</m-button>
@@ -25,6 +27,8 @@ export default {
     return {
       msg: 'xx',
       blockBtn: 'this is a block button',
+      disabledBtn: 'this is a disabled link button',
+      linkBtn: 'this is a link button',
       dangerBtn: 'this is a danger button',
       infoBtn: 'this is a button',
       secondaryBtn: 'this is a secondary button',
