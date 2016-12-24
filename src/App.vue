@@ -1,30 +1,39 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <br>
-    <div>{{ msg }}</div>
-    <m-button @click="handleClick(blockBtn)" char="warning" block>{{ blockBtn }}</m-button>
-    <m-button char="secondary" disabled>{{ disabledBtn }}</m-button>
-    <m-button char="link">{{ linkBtn }}</m-button>
-    <m-button @click="handleClick(dangerBtn)" char="danger">{{ dangerBtn }}</m-button>
-    <m-button @click="handleClick(infoBtn)" char="info">{{ infoBtn }}</m-button>
-    <m-button @click="handleClick(secondaryBtn)" char="secondary">{{ secondaryBtn }}</m-button>
-    <m-button @click="handleClick(primaryBtn)" char="primary" outline>{{ primaryBtn }}</m-button>
-    <m-button @toggled="handleClick(toggleBtn, $event)" toggle char="primary">{{ toggleBtn }}</m-button>
-    <m-button @toggled="handleClick(toggleBtn2, $event)" class="active" toggle char="success">{{ toggleBtn2 }}</m-button>
+    <section>{{ msg }}</section>
+    <section>
+      <h2>Button Example</h2>
+      <m-button char="link">{{ linkBtn }}</m-button>
+      <m-button char="secondary" disabled>{{ disabledBtn }}</m-button>
+      <m-button @click="handleClick(secondaryBtn)" char="secondary">{{ secondaryBtn }}</m-button>
+      <m-button @click="handleClick(primaryBtn)" char="primary" outline>{{ primaryBtn }}</m-button>
+      <m-button @click="handleClick(infoBtn)" char="info">{{ infoBtn }}</m-button>
+      <m-button @toggled="handleClick(toggleBtn, $event)" toggle char="primary">{{ toggleBtn }}</m-button>
+      <m-button @toggled="handleClick(toggleBtn2, $event)" class="active" toggle char="success">{{ toggleBtn2 }}</m-button>
+      <m-button @click="handleClick(dangerBtn)" char="danger">{{ dangerBtn }}</m-button>
+      <m-button @click="handleClick(blockBtn)" char="warning" block>{{ blockBtn }}</m-button>
+    </section>
+    <section>
+      <h2>CheckBox Example</h2>
+      <m-check v-model='checked' true-value="trueValue" false-value="falseValue" :checked="true">check it out: {{ checked }}</m-check><br>
+    </section>
   </div>
 </template>
 
 <script>
+/* eslint-disable no-unused-vars, no-console */
 import MButton from './components/Button';
+import MCheck from './components/Checkbox';
 
 export default {
   name: 'app',
   components: {
     MButton,
+    MCheck,
   },
   data() {
     return {
+      checked: false,
       msg: 'xx',
       blockBtn: 'this is a block button',
       disabledBtn: 'this is a disabled link button',
@@ -38,7 +47,6 @@ export default {
     };
   },
   methods: {
-    /* eslint-disable no-unused-vars, no-console */
     handleClick(msg, ev) {
       this.msg = msg;
 
@@ -52,6 +60,12 @@ export default {
 </script>
 
 <style>
+h2 {
+  margin-bottom: 1rem;
+}
+section {
+  margin-bottom: 3rem;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
