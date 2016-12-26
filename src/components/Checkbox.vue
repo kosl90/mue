@@ -3,7 +3,7 @@
   <label class="">
     <!-- TODO: customized checkbox -->
     <!-- state: focus/indeterminate/blur/disabled/checked/unchecked -->
-    <i class="checkbox-box"></i>
+    <!-- <i class="checkbox-box"></i> -->
     <!-- default :true-value/:false-value is not expected behaviour -->
     <input
       type="checkbox"

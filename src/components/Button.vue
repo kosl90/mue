@@ -1,7 +1,7 @@
 <template>
   <button
     class="btn"
-    :class="mClass"
+    :class="classes"
     :disabled="disabled"
     :data-toggle="toggle ? 'button' : false"
     @click="handleClick($event)"
@@ -45,7 +45,7 @@
       },
     },
     computed: {
-      mClass() {
+      classes() {
         let mainStyle = `btn-${this.char}`;
 
         if (this.outline) {
