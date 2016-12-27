@@ -29,6 +29,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 ## TODO
 
+[ ] flex box only?
 [ ] write example and documentation.
 [ ] use bootstrap source code.
 [ ] better a11y support.
