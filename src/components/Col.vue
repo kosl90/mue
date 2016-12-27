@@ -10,6 +10,8 @@
 
 
 <script>
+  // 24 maybe better for much more flexiable layout.
+  const MAX_COL = 12;
   const TypeTag = {
     Number: '[object Number]',
   };
@@ -42,8 +44,6 @@
     },
     computed: {
       gutterStyle() {
-        // using css variable maybe better
-        // style.setProperty('--halfGutter', `${this.$parent.gutter / 2}px`)
         const halfGutter = `${this.$parent.gutter / 2}px`;
         return {
           padding: 0,
@@ -71,9 +71,6 @@
         return prop !== undefined && this.getColClass(prop, propName);
       },
       getColClass(info, prefix) {
-        // 24 maybe better for much more flexiable layout.
-        const MAX_COL = 12;
-
         if (typeTag(info) === TypeTag.Number) {
           const span = clip(1, MAX_COL, info);
           return `${prefix}-md-${span}`;
@@ -95,7 +92,5 @@
 
 <style>
 .col {
-    padding-left: calc(var(--halfGutter));
-    padding-right: calc(var(--halfGutter));
 }
 </style>

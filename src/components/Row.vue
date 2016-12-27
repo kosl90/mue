@@ -17,8 +17,6 @@
     },
     computed: {
       gutterStyle() {
-        // using css variable maybe better
-        // style.setProperty('--halfGutter', `${-this.gutter / 2}px`)
         const halfGutter = `-${this.gutter / 2}px`;
         return {
           marginLeft: halfGutter,
@@ -32,9 +30,6 @@
 
 <style>
   .row {
-    --gutter: 30px;
-    margin-left: var(--halfGutter);
-    margin-right: var(--halfGutter);
     display: block;
   }
 </style>
