@@ -44,6 +44,11 @@
         </div>
       </div>
     </section>
+    <section>
+      <h2>Image Example</h2>
+      <m-img :src="img" />
+      <m-img lazy :src="img" placeholder />
+    </section>
   </div>
 </template>
 
@@ -54,6 +59,7 @@ import MCheck from './components/Checkbox';
 // import MRadio from './components/Radio';
 import MRow from './components/Row';
 import MCol from './components/Col';
+import MImg from './components/Img';
 
 export default {
   name: 'app',
@@ -63,9 +69,11 @@ export default {
     // MRadio,
     MRow,
     MCol,
+    MImg,
   },
   data() {
     return {
+      img: 'http://localhost:8000/logo.png',
       checked: false,
       radioModel: 'this is a radio button',
       msg: 'this is a message',

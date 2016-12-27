@@ -5,7 +5,7 @@
 <script>
   // TODO
   export default {
-    name: "MSwitch",
+    name: 'MSwitch',
     props: {
       disabled: Boolean,
       active: Boolean,
