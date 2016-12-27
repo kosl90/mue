@@ -31,6 +31,7 @@
         // {xs, sm, md, lg, xl}
         type: [Number, Object],
         required: true,
+        default: MAX_COL,
       },
       push: {
         type: [Number, Object],
