@@ -39,6 +39,9 @@
           <m-col class="e-col" :span="3" :push="1"><div></div></m-col>
           <m-col class="e-col" :span="2" :pull="8"><div></div></m-col>
         </m-row>
+        <div>
+          <m-col class="e-col" :span="2" :pull="8"><div></div></m-col>
+        </div>
       </div>
     </section>
   </div>

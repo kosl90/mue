@@ -44,6 +44,12 @@
     },
     computed: {
       gutterStyle() {
+        const parent = this.$parent;
+
+        if (!(parent && parent.$options.name === 'MRow')) {
+          return false;
+        }
+
         const halfGutter = `${this.$parent.gutter / 2}px`;
         return {
           padding: 0,
