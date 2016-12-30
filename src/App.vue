@@ -61,6 +61,9 @@ import MRow from './components/Row';
 import MCol from './components/Col';
 import MImg from './components/Img';
 
+import logo from './assets/logo.png';
+
+
 export default {
   name: 'app',
   components: {
@@ -73,7 +76,7 @@ export default {
   },
   data() {
     return {
-      img: 'http://localhost:8000/logo.png',
+      img: logo,
       checked: false,
       radioModel: 'this is a radio button',
       msg: 'this is a message',
