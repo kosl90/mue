@@ -47,7 +47,7 @@
     <section>
       <h2>Image Example</h2>
       <m-img :src="img" />
-      <m-img lazy :src="img" placeholder />
+      <m-img v-lazy :src="img" placeholder />
     </section>
     <section>
       <h2>Switch Example</h2>
