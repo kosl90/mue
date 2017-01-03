@@ -49,6 +49,11 @@
       <m-img :src="img" />
       <m-img lazy :src="img" placeholder />
     </section>
+    <section>
+      <h2>Switch Example</h2>
+      <div><m-switch v-model="switchOn"></m-switch>{{ switchOn }}</div>
+      <div><p>prevent switch event if you need</p><m-switch @click.prevent></m-switch></div>
+    </section>
   </div>
 </template>
 
@@ -60,6 +65,7 @@ import MCheck from './components/Checkbox';
 import MRow from './components/Row';
 import MCol from './components/Col';
 import MImg from './components/Img';
+import MSwitch from './components/Switch';
 
 import logo from './assets/logo.png';
 
@@ -73,10 +79,12 @@ export default {
     MRow,
     MCol,
     MImg,
+    MSwitch,
   },
   data() {
     return {
       img: logo,
+      switchOn: true,
       checked: false,
       radioModel: 'this is a radio button',
       msg: 'this is a message',
