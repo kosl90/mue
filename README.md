@@ -27,6 +27,37 @@ npm test
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 
+## Components
+
+- [ ] Icon
+- [ ] Grid
+- [ ] Button
+- [ ] CheckButton And Group
+- [ ] RadioButton And Group
+- [ ] Switcher
+- [ ] DatePicker
+- [ ] TimerPicker
+- [ ] DateTimePicker
+- [ ] Input
+- [ ] Upload
+- [ ] Slider
+- [ ] Select
+- [ ] Badge
+- [ ] Carousel
+- [ ] Collapse
+- [ ] Table
+- [ ] Affix
+- [ ] Dropdown
+- [ ] Menu
+- [ ] Pagination
+- [ ] Steps
+- [ ] Tabs
+- [ ] Dialog
+- [ ] Notification
+- [ ] Progress
+- TBD
+
+
 ## TODO
 
 - [ ] flex box only(maybe).
