@@ -29,9 +29,9 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 ## TODO
 
-[ ] flex box only?
-[ ] write example and documentation.
-[ ] use bootstrap source code.
-[ ] better a11y support.
-[ ] remove bootstrap, write a default theme maybe.
-[ ] use jsx maybe.
+- [ ] flex box only(maybe).
+- [ ] use jsx(maybe).
+- [ ] write example and documentation.
+- [ ] MD for now.
+- [ ] remove bootstrap, write a default theme maybe.
+- [ ] better a11y support.
