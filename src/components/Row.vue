@@ -27,9 +27,3 @@
     },
   };
 </script>
-
-<style>
-  .row {
-    display: block;
-  }
-</style>
