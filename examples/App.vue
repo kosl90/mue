@@ -59,15 +59,15 @@
 
 <script>
 /* eslint-disable no-unused-vars, no-console */
-import MButton from './components/Button';
-import MCheck from './components/Checkbox';
-// import MRadio from './components/Radio';
-import MRow from './components/Row';
-import MCol from './components/Col';
-import MImg from './components/Img';
-import MSwitch from './components/Switch';
+import MButton from '~components/Button';
+import MCheck from '~components/Checkbox';
+// import MRadio from '~components/Radio';
+import MRow from '~components/Row';
+import MCol from '~components/Col';
+import MImg from '~components/Image/Image';
+import MSwitch from '~components/Switch';
 
-import logo from './assets/logo.png';
+import logo from '~assets/logo.png';
 
 
 export default {
