@@ -56,11 +56,16 @@ npm test
 - TBD
 
 
-## TODO
+## Design
 
 - [ ] flex box only(maybe).
-- [ ] use jsx(maybe).
-- [ ] write example and documentation.
 - [ ] MD for now.
-- [ ] remove bootstrap, write a default theme maybe.
+- [ ] write a default theme(maybe).
+- [ ] use jsx(maybe).
 - [ ] better a11y support.
+
+
+## TODO
+
+- [ ] webpack config.
+- [ ] write example and documentation.
