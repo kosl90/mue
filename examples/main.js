@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import App from './App';
-import LazyImg from '~components/Image/LazyImage';  // eslint-disable-line
+import LazyImg from '~directives/LazyLoader/LazyImage';  // eslint-disable-line
 
 Vue.use(LazyImg);
 

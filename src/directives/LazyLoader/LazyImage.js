@@ -6,7 +6,10 @@ function initEchoIfNeed(option) {
   if (inited) {
     return;
   }
-  echo = echo(typeof window === 'undefined' ? this : window);
+
+  // FIXME: this problem just occurs in development mode.
+  // asynchronously requiring 'echo-js' is another solution for umd style package.
+  const echo = require('imports-loader?define=>false!echo-js')(window);
   echo.init(option);
   inited = true;
 }
