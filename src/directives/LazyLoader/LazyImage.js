@@ -15,6 +15,9 @@ function initEchoIfNeed(option) {
 }
 
 
+// TODO: implement
+// v-lazy, v-lazy.bg used for image
+// v-lazy:loader='loader function' used for component
 export default {
   install(Vue, option) {
     Vue.directive('lazy', {
