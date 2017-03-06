@@ -1,0 +1,16 @@
+@import './variables.css';
+
+.success {
+  color: var(--reverse-color);
+  background-color: var(--success-color);
+}
+
+.warn {
+  color: var(--reverse-color);
+  background-color: var(--warn-color);
+}
+
+.danger {
+  color: var(--reverse-color);
+  background-color: var(--danger-color);
+}

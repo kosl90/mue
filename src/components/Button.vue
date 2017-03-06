@@ -1,6 +1,6 @@
 <template>
   <button
-    class="btn"
+    class="ve-btn"
     :class="classes"
     :disabled="disabled"
     :data-toggle="toggle ? 'button' : false"
@@ -11,10 +11,12 @@
 </template>
 
 <script>
+  import '~styles/button.scss';
+
   export default {
     name: 'MButton',
     props: {
-      char: {
+      kind: {  // maybe v-kind
         type: String, // primary/secondary/success/info/warning/danger/link
         default: '',
         required: true,
@@ -46,18 +48,18 @@
     },
     computed: {
       classes() {
-        let mainStyle = `btn-${this.char}`;
+        let mainStyle = `ve-btn-${this.kind}`;
 
         if (this.outline) {
-          mainStyle = `btn-outline-${this.char}`;
+          mainStyle = `ve-btn-outline-${this.kind}`;
         }
 
         return [
           mainStyle,
-          this.size === '' ? '' : `btn-${this.size}`,
+          this.size === '' ? '' : `ve-btn-${this.size}`,
           {
             active: this.toggle && this.active,
-            'btn-block': this.block,
+            've-btn-block': this.block,
           },
         ];
       },

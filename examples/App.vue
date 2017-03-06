@@ -3,15 +3,15 @@
     <section>{{ msg }}</section>
     <section>
       <h2>Button Example</h2>
-      <m-button char="link">{{ linkBtn }}</m-button>
-      <m-button char="secondary" disabled>{{ disabledBtn }}</m-button>
-      <m-button @click="handleClick(secondaryBtn)" char="secondary">{{ secondaryBtn }}</m-button>
-      <m-button @click="handleClick(primaryBtn)" char="primary" outline>{{ primaryBtn }}</m-button>
-      <m-button @click="handleClick(infoBtn)" char="info">{{ infoBtn }}</m-button>
-      <m-button @toggled="handleClick(toggleBtn, $event)" toggle char="primary">{{ toggleBtn }}</m-button>
-      <m-button @toggled="handleClick(toggleBtn2, $event)" class="active" toggle char="success">{{ toggleBtn2 }}</m-button>
-      <m-button @click="handleClick(dangerBtn)" char="danger">{{ dangerBtn }}</m-button>
-      <m-button @click="handleClick(blockBtn)" char="warning" block>{{ blockBtn }}</m-button>
+      <m-button kind="link">{{ linkBtn }}</m-button>
+      <m-button kind="secondary" disabled>{{ disabledBtn }}</m-button>
+      <m-button @click="handleClick(secondaryBtn)" kind="secondary">{{ secondaryBtn }}</m-button>
+      <m-button @click="handleClick(primaryBtn)" kind="primary" outline>{{ primaryBtn }}</m-button>
+      <m-button @click="handleClick(infoBtn)" kind="info">{{ infoBtn }}</m-button>
+      <m-button @toggled="handleClick(toggleBtn, $event)" toggle kind="primary">{{ toggleBtn }}</m-button>
+      <m-button @toggled="handleClick(toggleBtn2, $event)" class="active" toggle kind="success">{{ toggleBtn2 }}</m-button>
+      <m-button @click="handleClick(dangerBtn)" kind="danger">{{ dangerBtn }}</m-button>
+      <m-button @click="handleClick(blockBtn)" kind="warning" block>{{ blockBtn }}</m-button>
     </section>
     <section>
       <h2>CheckBox Button Example</h2>
