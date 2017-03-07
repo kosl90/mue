@@ -1,7 +1,12 @@
 <template>
   <div class='v-collapse-item' :class='{"active": panelVisible}'>
     <header class='v-collapse-item__header' role='heading' :aria-level='level '>
-      <button class='v-collapse-item__header__btn' role='button' :aria-disabled='panelVisible' :aria-controls='panelID'>
+      <!--
+        If the accordion panel associated with an accordion header is visible, and if the accordion does not permit the panel to
+        be collapsed, the header button element has aria-disabled set to true.
+        -->
+      <button class='v-collapse-item__header__btn' role='button' :aria-disabled='disableBtn && panelVisible' :aria-expanded='panelVisible'
+        :aria-controls='panelID'>
         <slot name='title'>{{ title }}</slot>
       </button>
     </header>
@@ -38,10 +43,17 @@
       return {
         panelID: `v-collapse-item-${this._uid}`,  // eslint-disable-line
         panelVisible: 'false',
+        disableBtn: false,
       };
+    },
+    computed: {
+      isOpen() {
+        return this.panelVisible === 'true';
+      },
     },
     methods: {
       close() {
+        this.disableBtn = false;
         this.panelVisible = 'false';
         this.$emit.call(this.$parent, 'vee:item-closed', this);
       },
@@ -49,8 +61,8 @@
         this.panelVisible = 'true';
         this.$emit.call(this.$parent, 'vee:item-open', this);
       },
-      isOpen() {
-        return this.panelVisible === 'true';
+      disableButton() {
+        this.disableBtn = true;
       },
     },
   };

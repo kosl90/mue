@@ -33,6 +33,7 @@
       const firstChild = this.findComponent(this.$el.firstChild.firstChild.firstChild);
       if (firstChild && !firstChild.active) {
         firstChild.open();
+        firstChild.disableButton();
       }
     },
     methods: {
@@ -62,10 +63,11 @@
           }
 
           activeChild.open();
+          activeChild.disableButton();
         }
       },
       triggerCollapse(activeChild) {
-        activeChild[activeChild.isOpen() ? 'close' : 'open']();
+        activeChild[activeChild.isOpen ? 'close' : 'open']();
       },
       handleKey(ev) {
         switch (ev.keyCode) {
