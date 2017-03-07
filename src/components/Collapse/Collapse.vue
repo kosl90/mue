@@ -28,6 +28,8 @@
       if (this.accordion !== 'strict') {
         return;
       }
+
+      // FIXME: this is not good ==
       const firstChild = this.findComponent(this.$el.firstChild.firstChild.firstChild);
       if (firstChild && !firstChild.active) {
         firstChild.open();
