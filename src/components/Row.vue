@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'MRow',
+    name: 'VRow',
     props: {
       gutter: {
         type: Number,
@@ -26,4 +26,5 @@
       },
     },
   };
+
 </script>

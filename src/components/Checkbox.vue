@@ -20,7 +20,7 @@
 <script>
   /* eslint-disable no-console */
   export default {
-    name: 'MCheck',
+    name: 'VCheck',
     data() {
       return {
         model: this.checked,
@@ -83,6 +83,7 @@
       },
     },
   };
+
 </script>
 
 <style>

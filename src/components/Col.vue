@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="col"
-    :class="classes"
-    :style="gutterStyle"
-  >
+  <div class="col" :class="classes" :style="gutterStyle">
     <slot></slot>
   </div>
 </template>
@@ -25,7 +21,7 @@
   }
 
   export default {
-    name: 'MCol',
+    name: 'VCol',
     props: {
       span: {
         // {xs, sm, md, lg, xl}
@@ -95,9 +91,9 @@
       },
     },
   };
+
 </script>
 
 <style>
-.col {
-}
+  .col {}
 </style>

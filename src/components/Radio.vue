@@ -16,7 +16,7 @@
   // TODO
   /* eslint-disable no-console */
   export default {
-    name: 'MRadio',
+    name: 'VRadio',
     data() {
       return {
         model: this.checked,
@@ -75,6 +75,7 @@
       },
     },
   };
+
 </script>
 
 <style>

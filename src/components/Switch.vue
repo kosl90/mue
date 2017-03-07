@@ -17,7 +17,7 @@
 
 <script>
   export default {
-    name: 'MSwitch',
+    name: 'VSwitch',
     data() {
       return {
         model: Boolean,
@@ -48,4 +48,5 @@
       },
     },
   };
+
 </script>

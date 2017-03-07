@@ -1,11 +1,5 @@
 <template>
-  <button
-    class="ve-btn"
-    :class="classes"
-    :disabled="disabled"
-    :data-toggle="toggle ? 'button' : false"
-    @click="handleClick($event)"
-  >
+  <button class="ve-btn" :class="classes" :disabled="disabled" :data-toggle="toggle ? 'button' : false" @click="handleClick($event)">
   <slot></slot>
   </button>
 </template>
@@ -14,7 +8,7 @@
   import '~styles/button.scss';
 
   export default {
-    name: 'MButton',
+    name: 'VButton',
     props: {
       kind: {  // maybe v-kind
         type: String, // primary/secondary/success/info/warning/danger/link
@@ -79,4 +73,5 @@
       },
     },
   };
+
 </script>
