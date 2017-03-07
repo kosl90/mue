@@ -1,175 +1,37 @@
 <template>
   <div id="app">
-    <section>{{ msg }}</section>
-    <section>
-      <h2>Button Example</h2>
-      <m-button kind="link">{{ linkBtn }}</m-button>
-      <m-button kind="secondary" disabled>{{ disabledBtn }}</m-button>
-      <m-button @click="handleClick(secondaryBtn)" kind="secondary">{{ secondaryBtn }}</m-button>
-      <m-button @click="handleClick(primaryBtn)" kind="primary" outline>{{ primaryBtn }}</m-button>
-      <m-button @click="handleClick(infoBtn)" kind="info">{{ infoBtn }}</m-button>
-      <m-button @toggled="handleClick(toggleBtn, $event)" toggle kind="primary">{{ toggleBtn }}</m-button>
-      <m-button @toggled="handleClick(toggleBtn2, $event)" class="active" toggle kind="success">{{ toggleBtn2 }}</m-button>
-      <m-button @click="handleClick(dangerBtn)" kind="danger">{{ dangerBtn }}</m-button>
-      <m-button @click="handleClick(blockBtn)" kind="warning" block>{{ blockBtn }}</m-button>
-    </section>
-    <section>
-      <h2>CheckBox Button Example</h2>
-      <m-check v-model='checked' true-value="trueValue" false-value="falseValue" :checked="true">check it out: {{ checked }}</m-check><br>
-    </section>
-    <!--
-    <section>
-      <h2>Radio Button Example</h2>
-      <m-radio v-model='radioModel' true-value='radio'>check this out: {{ radio }}</m-radio>
-    </section>
-    -->
-    <section>
-      <h2>Grid Example</h2>
-      <div class="container-fluid">
-        <m-row class="e-row" :gutter="30">
-          <m-col class="e-col" :span="4">
-            <div></div>
-          </m-col>
-          <m-col class="e-col" :span="4">
-            <div></div>
-          </m-col>
-          <m-col class="e-col" :span="4">
-            <div></div>
-          </m-col>
-        </m-row>
-        <m-row class="e-row">
-          <m-col class="e-col" :span="6">
-            <div></div>
-          </m-col>
-        </m-row>
-        <m-row class="e-row">
-          <m-col class="e-col" :span="2" :offset="3">
-            <div></div>
-          </m-col>
-          <m-col class="e-col" :span="3" :push="1">
-            <div></div>
-          </m-col>
-          <m-col class="e-col" :span="2" :pull="8">
-            <div></div>
-          </m-col>
-        </m-row>
-        <div>
-          <m-col class="e-col" :span="2" :pull="8">
-            <div></div>
-          </m-col>
-        </div>
-      </div>
-    </section>
-    <section>
-      <h2>Image Example</h2>
-      <m-img :src="img" />
-      <m-img v-lazy :src="img" placeholder />
-    </section>
-    <section>
-      <h2>Switch Example</h2>
-      <div>
-        <m-switch v-model="switchOn"></m-switch>{{ switchOn }}</div>
-      <div>
-        <p>prevent switch event if you need</p>
-        <m-switch @click.prevent></m-switch>
-      </div>
-    </section>
-    <section>
-      <h2>Accordion Example</h2>
-      <h3>Generic Collapse</h3>
-      <VCollapse>
-        <VCollapseItem>
-          <template slot="title">header 1</template>
-          <p>test</p>
-        </VCollapseItem>
-        <VCollapseItem>
-          <template slot="title">header 2</template>
-          <p>test2</p>
-        </VCollapseItem>
-      </VCollapse>
-
-      <h3>loose mode Accordion</h3>
-      <VCollapse accordion>
-        <VCollapseItem active>
-          <template slot="title">header 1</template>
-          <p>test</p>
-        </VCollapseItem>
-        <VCollapseItem>
-          <template slot="title">header 2</template>
-          <p>test2</p>
-        </VCollapseItem>
-      </VCollapse>
-
-      <h3>strict mode Accordion</h3>
-      <VCollapse accordion='strict'>
-        <VCollapseItem>
-          <template slot="title">header 1</template>
-          <p>test</p>
-        </VCollapseItem>
-        <VCollapseItem>
-          <template slot="title">header 2</template>
-          <p>test2</p>
-        </VCollapseItem>
-      </VCollapse>
-    </section>
+    <ButtonExample></ButtonExample>
+    <CheckBoxExample></CheckBoxExample>
+    <RadioExample></RadioExample>
+    <GridExample></GridExample>
+    <ImageExample></ImageExample>
+    <SwitchExample></SwitchExample>
+    <CollapseExample></CollapseExample>
   </div>
 </template>
 
 <script>
-  /* eslint-disable no-unused-vars, no-console */
-  import MButton from '~components/Button';
-  import MCheck from '~components/Checkbox';
-  // import MRadio from '~components/Radio';
-  import MRow from '~components/Row';
-  import MCol from '~components/Col';
-  import MImg from '~components/Image/Image';
-  import MSwitch from '~components/Switch';
-  import { VCollapse, VCollapseItem } from '~components/Collapse';
-
-  import logo from '~assets/logo.png';
+  import RadioExample from './RadioBox';
+  import ButtonExample from './Button';
+  import CheckBoxExample from './CheckBox';
+  import ImageExample from './Image';
+  import GridExample from './Grid';
+  import SwitchExample from './Switch';
+  import CollapseExample from './Collapse';
 
   import './app.css';
 
+  // TODO: add router.
   export default {
     name: 'app',
     components: {
-      MButton,
-      MCheck,
-      // MRadio,
-      MRow,
-      MCol,
-      MImg,
-      MSwitch,
-      VCollapse,
-      VCollapseItem,
-    },
-    data() {
-      return {
-        img: logo,
-        switchOn: true,
-        checked: false,
-        radioModel: 'this is a radio button',
-        msg: 'this is a message',
-        blockBtn: 'this is a block button',
-        disabledBtn: 'this is a disabled link button',
-        linkBtn: 'this is a link button',
-        dangerBtn: 'this is a danger button',
-        infoBtn: 'this is a button',
-        secondaryBtn: 'this is a secondary button',
-        primaryBtn: 'this is a outline primary button',
-        toggleBtn: 'this is a toggle button',
-        toggleBtn2: 'this is a actived toggle button',
-      };
-    },
-    methods: {
-      handleClick(msg, ev) {
-        this.msg = msg;
-
-        if (ev && typeof ev.toggled !== 'undefined') {
-          this.msg = `${msg}. toggled: ${ev.toggled}`;
-          return;
-        }
-      },
+      RadioExample,
+      ImageExample,
+      ButtonExample,
+      CheckBoxExample,
+      GridExample,
+      SwitchExample,
+      CollapseExample,
     },
   };
 
