@@ -11,7 +11,7 @@
 
     <h3>loose mode Accordion</h3>
     <VCollapse accordion>
-      <VCollapseItem v-for='item in items'>
+      <VCollapseItem v-for='(item, i) in items' :active='i===0'>
         <template slot="title">{{ item.title }}</template>
         <p>{{ item.content }}</p>
       </VCollapseItem>
@@ -27,10 +27,6 @@
         <template slot="title">{{ item.title }}</template>
         <p>{{ item.content }}</p>
       </VCollapseItem>
-      <!--<VCollapseItem>
-        <template slot="title">header 2</template>
-        <p>test2</p>
-      </VCollapseItem>-->
     </VCollapse>
   </section>
 </template>

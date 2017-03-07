@@ -1,5 +1,5 @@
 <template>
-  <div class='v-collapse-item' :class='{"active": panelVisible}'>
+  <div class='v-collapse-item' :class='{"active": isOpen}'>
     <header class='v-collapse-item__header' role='heading' :aria-level='level '>
       <!--
         If the accordion panel associated with an accordion header is visible, and if the accordion does not permit the panel to
