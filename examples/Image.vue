@@ -7,8 +7,12 @@
 </template>
 
 <script>
+  import Vue from 'vue';
   import logo from '~assets/logo.png';
-  import VImage from '~components/Image/Image';
+  import VImage from '~components/Image';
+  import LazyImg from '~directives/LazyLoader/LazyImage'; // eslint-disable-line
+
+  Vue.use(LazyImg);
 
   export default {
     name: 'ImageExample',
