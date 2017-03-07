@@ -29,7 +29,7 @@
         return;
       }
 
-      // FIXME: this is not good ==
+      // FIXME: this is not good, won't work for async operations.
       const firstChild = this.findComponent(this.$el.firstChild.firstChild.firstChild);
       if (firstChild && !firstChild.active) {
         firstChild.open();
@@ -38,6 +38,7 @@
     },
     methods: {
       findComponent(target) {
+        // FIXME: maybe a better way to find the component.
         for (const child of this.$children) {
           if (child.$el.firstChild.firstChild.isSameNode(target)) {
             return child;
