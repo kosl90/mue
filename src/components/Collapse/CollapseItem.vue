@@ -37,7 +37,9 @@
       maxHeight: String,
     },
     mounted() {
-      if (this.active) this.open();
+      if (this.active) {
+        this.open();
+      }
     },
     data() {
       return {

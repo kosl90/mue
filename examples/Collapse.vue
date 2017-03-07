@@ -3,21 +3,17 @@
     <h2>Accordion Example</h2>
     <h3>Generic Collapse</h3>
     <VCollapse>
-      <VCollapseItem>
-        <template slot="title">header 1</template>
-        <p>test</p>
-      </VCollapseItem>
-      <VCollapseItem>
-        <template slot="title">header 2</template>
-        <p>test2</p>
+      <VCollapseItem v-for='item in items'>
+        <template slot="title">{{ item.title }}</template>
+        <p>{{ item.content }}</p>
       </VCollapseItem>
     </VCollapse>
 
     <h3>loose mode Accordion</h3>
     <VCollapse accordion>
-      <VCollapseItem active>
-        <template slot="title">header 1</template>
-        <p>test</p>
+      <VCollapseItem v-for='item in items'>
+        <template slot="title">{{ item.title }}</template>
+        <p>{{ item.content }}</p>
       </VCollapseItem>
       <VCollapseItem>
         <template slot="title">header 2</template>
@@ -27,14 +23,14 @@
 
     <h3>strict mode Accordion</h3>
     <VCollapse accordion='strict'>
-      <VCollapseItem>
-        <template slot="title">header 1</template>
-        <p>test</p>
+      <VCollapseItem v-for='item in items'>
+        <template slot="title">{{ item.title }}</template>
+        <p>{{ item.content }}</p>
       </VCollapseItem>
-      <VCollapseItem>
+      <!--<VCollapseItem>
         <template slot="title">header 2</template>
         <p>test2</p>
-      </VCollapseItem>
+      </VCollapseItem>-->
     </VCollapse>
   </section>
 </template>
@@ -47,6 +43,20 @@
     components: {
       VCollapse,
       VCollapseItem,
+    },
+    data() {
+      return {
+        items: [
+          {
+            title: 'This is title',
+            content: 'A short content',
+          },
+          {
+            title: 'Another title',
+            content: 'A loooooooooooooooong content',
+          },
+        ],
+      };
     },
   };
 

@@ -8,11 +8,7 @@
   export default {
     name: 'Collapse',
     props: {
-      accordion: {
-        // [loose, strict, true, false]
-        type: [Boolean, String],
-        default: false,
-      },
+      accordion: String, // [loose, strict]
     },
     data() {
       return {
@@ -20,12 +16,12 @@
       };
     },
     created() {
-      if (this.accordion) {
+      if (this.isAccordion) {
         this.$on('vee:item-open', this.recordOpened);
       }
     },
     mounted() {
-      if (this.accordion !== 'strict') {
+      if (!this.isStrict) {
         return;
       }
 
@@ -56,7 +52,7 @@
         }
 
         // non-accordion mode or same item in loose accordion mode.
-        if (!this.accordion || (activeChild === this.lastActived && this.accordion !== 'strict')) {
+        if (!this.isAccordion || (activeChild === this.lastActived && !this.isStrict)) {
           this.triggerCollapse(activeChild);
         } else if (activeChild !== this.lastActived) {  // accordion mode
           if (this.lastActived) {
@@ -81,6 +77,14 @@
         // END_KEY  // last
         // CTRL_KEY PAGE_DOWN_KEY  // next
         // CTRL_KEY PAGE_UP_KEY // previous
+      },
+    },
+    computed: {
+      isAccordion() {
+        return typeof this.accordion !== 'undefined';
+      },
+      isStrict() {
+        return this.isAccordion && String(this.accordion).toLowerCase() === 'strict';
       },
     },
   };
