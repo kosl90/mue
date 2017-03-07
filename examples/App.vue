@@ -27,20 +27,36 @@
       <h2>Grid Example</h2>
       <div class="container-fluid">
         <m-row class="e-row" :gutter="30">
-          <m-col class="e-col" :span="4"><div></div></m-col>
-          <m-col class="e-col" :span="4"><div></div></m-col>
-          <m-col class="e-col" :span="4"><div></div></m-col>
+          <m-col class="e-col" :span="4">
+            <div></div>
+          </m-col>
+          <m-col class="e-col" :span="4">
+            <div></div>
+          </m-col>
+          <m-col class="e-col" :span="4">
+            <div></div>
+          </m-col>
         </m-row>
         <m-row class="e-row">
-          <m-col class="e-col" :span="6"><div></div></m-col>
+          <m-col class="e-col" :span="6">
+            <div></div>
+          </m-col>
         </m-row>
         <m-row class="e-row">
-          <m-col class="e-col" :span="2" :offset="3"><div></div></m-col>
-          <m-col class="e-col" :span="3" :push="1"><div></div></m-col>
-          <m-col class="e-col" :span="2" :pull="8"><div></div></m-col>
+          <m-col class="e-col" :span="2" :offset="3">
+            <div></div>
+          </m-col>
+          <m-col class="e-col" :span="3" :push="1">
+            <div></div>
+          </m-col>
+          <m-col class="e-col" :span="2" :pull="8">
+            <div></div>
+          </m-col>
         </m-row>
         <div>
-          <m-col class="e-col" :span="2" :pull="8"><div></div></m-col>
+          <m-col class="e-col" :span="2" :pull="8">
+            <div></div>
+          </m-col>
         </div>
       </div>
     </section>
@@ -51,101 +67,110 @@
     </section>
     <section>
       <h2>Switch Example</h2>
-      <div><m-switch v-model="switchOn"></m-switch>{{ switchOn }}</div>
-      <div><p>prevent switch event if you need</p><m-switch @click.prevent></m-switch></div>
+      <div>
+        <m-switch v-model="switchOn"></m-switch>{{ switchOn }}</div>
+      <div>
+        <p>prevent switch event if you need</p>
+        <m-switch @click.prevent></m-switch>
+      </div>
+    </section>
+    <section>
+      <h2>Accordion Example</h2>
+      <h3>Generic Collapse</h3>
+      <VCollapse>
+        <VCollapseItem>
+          <template slot="title">header 1</template>
+          <p>test</p>
+        </VCollapseItem>
+        <VCollapseItem>
+          <template slot="title">header 2</template>
+          <p>test2</p>
+        </VCollapseItem>
+      </VCollapse>
+
+      <h3>loose mode Accordion</h3>
+      <VCollapse accordion>
+        <VCollapseItem active>
+          <template slot="title">header 1</template>
+          <p>test</p>
+        </VCollapseItem>
+        <VCollapseItem>
+          <template slot="title">header 2</template>
+          <p>test2</p>
+        </VCollapseItem>
+      </VCollapse>
+
+      <h3>strict mode Accordion</h3>
+      <VCollapse accordion='strict'>
+        <VCollapseItem>
+          <template slot="title">header 1</template>
+          <p>test</p>
+        </VCollapseItem>
+        <VCollapseItem>
+          <template slot="title">header 2</template>
+          <p>test2</p>
+        </VCollapseItem>
+      </VCollapse>
     </section>
   </div>
 </template>
 
 <script>
-/* eslint-disable no-unused-vars, no-console */
-import MButton from '~components/Button';
-import MCheck from '~components/Checkbox';
-// import MRadio from '~components/Radio';
-import MRow from '~components/Row';
-import MCol from '~components/Col';
-import MImg from '~components/Image/Image';
-import MSwitch from '~components/Switch';
+  /* eslint-disable no-unused-vars, no-console */
+  import MButton from '~components/Button';
+  import MCheck from '~components/Checkbox';
+  // import MRadio from '~components/Radio';
+  import MRow from '~components/Row';
+  import MCol from '~components/Col';
+  import MImg from '~components/Image/Image';
+  import MSwitch from '~components/Switch';
+  import { VCollapse, VCollapseItem } from '~components/Collapse';
 
-import logo from '~assets/logo.png';
+  import logo from '~assets/logo.png';
 
+  import './app.css';
 
-export default {
-  name: 'app',
-  components: {
-    MButton,
-    MCheck,
-    // MRadio,
-    MRow,
-    MCol,
-    MImg,
-    MSwitch,
-  },
-  data() {
-    return {
-      img: logo,
-      switchOn: true,
-      checked: false,
-      radioModel: 'this is a radio button',
-      msg: 'this is a message',
-      blockBtn: 'this is a block button',
-      disabledBtn: 'this is a disabled link button',
-      linkBtn: 'this is a link button',
-      dangerBtn: 'this is a danger button',
-      infoBtn: 'this is a button',
-      secondaryBtn: 'this is a secondary button',
-      primaryBtn: 'this is a outline primary button',
-      toggleBtn: 'this is a toggle button',
-      toggleBtn2: 'this is a actived toggle button',
-    };
-  },
-  methods: {
-    handleClick(msg, ev) {
-      this.msg = msg;
-
-      if (ev && typeof ev.toggled !== 'undefined') {
-        this.msg = `${msg}. toggled: ${ev.toggled}`;
-        return;
-      }
+  export default {
+    name: 'app',
+    components: {
+      MButton,
+      MCheck,
+      // MRadio,
+      MRow,
+      MCol,
+      MImg,
+      MSwitch,
+      VCollapse,
+      VCollapseItem,
     },
-  },
-};
+    data() {
+      return {
+        img: logo,
+        switchOn: true,
+        checked: false,
+        radioModel: 'this is a radio button',
+        msg: 'this is a message',
+        blockBtn: 'this is a block button',
+        disabledBtn: 'this is a disabled link button',
+        linkBtn: 'this is a link button',
+        dangerBtn: 'this is a danger button',
+        infoBtn: 'this is a button',
+        secondaryBtn: 'this is a secondary button',
+        primaryBtn: 'this is a outline primary button',
+        toggleBtn: 'this is a toggle button',
+        toggleBtn2: 'this is a actived toggle button',
+      };
+    },
+    methods: {
+      handleClick(msg, ev) {
+        this.msg = msg;
+
+        if (ev && typeof ev.toggled !== 'undefined') {
+          this.msg = `${msg}. toggled: ${ev.toggled}`;
+          return;
+        }
+      },
+    },
+  };
+
 </script>
-
-<style>
-h2 {
-  margin-bottom: 1rem;
-}
-section {
-  margin-bottom: 3rem;
-}
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-.e-row {
-  background: #e5e9f2;
-}
-/*
-.e-col {
-  background: transparent;
-}
-*/
-/*.e-col,*/
-.e-col div {
-  height: 2em;
-}
-/*.e-col:nth-child(odd),*/
-.e-col:nth-child(odd) div {
-  background: #99a9bf;
-}
-/*.e-col:nth-child(even),*/
-.e-col:nth-child(even) div {
-  background: #d3dce6;
-}
-</style>

@@ -1,0 +1,37 @@
+h2 {
+  margin-bottom: 1rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+
+.e-row {
+  background: #e5e9f2;
+}
+
+/* .e-col { background: transparent; } */
+/*.e-col,*/
+.e-col div {
+  height: 2em;
+}
+
+/*.e-col:nth-child(odd),*/
+.e-col:nth-child(odd) div {
+  background: #99a9bf;
+}
+
+/*.e-col:nth-child(even),*/
+.e-col:nth-child(even) div {
+  background: #d3dce6;
+}

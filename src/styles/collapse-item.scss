@@ -1,0 +1,26 @@
+// TODO: style and transition
+.v-collapse-item {
+  & .v-collapse-item__panel[aria-visible='false'] {
+    display: none;
+  }
+  & .v-collapse-item__panel.auto-height {
+    overflow: hidden;
+  }
+
+  &__header {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__header__btn {
+    text-align: justify;
+    width: 100%;
+    margin: 0;
+    border: 0;
+  }
+
+  &__panel {
+    padding: 0;
+    margin: 0;
+  }
+}
