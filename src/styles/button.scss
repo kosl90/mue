@@ -1,4 +1,4 @@
-@import 'variables.scss';
+@import 'variables';
 
 .ve-btn {
   display: inline-block;
@@ -12,6 +12,7 @@
   text-shadow: none;
   border-radius: var(--btn-radius);
   border: 1px transparent solid;
+  color: var(--red);
 }
 
 .ve-btn:hover, .ve-btn.hover {

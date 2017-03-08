@@ -1,3 +1,5 @@
+@import "palette";
+
 :root {
   --btn-radius: 0.3em;
   --primary-color: var(--md-primary);
@@ -13,6 +15,11 @@
   --md-primary-text: #212121;
   --md-secondary-text: #757575;
   --md-divder-color: #bdbdbd;
+
+  @include defineColors;
+
+  --black: #000;
+  --white: #fff;
 }
 
 

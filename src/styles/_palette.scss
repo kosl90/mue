@@ -1,0 +1,20 @@
+@mixin gen($base, $name, $value, $func, $num) {
+  @for $i from 1 through $num {
+    --#{$base}-#{$name}-#{$i}: $func($value, 100 * $i);
+  }
+  --#{$base}-#{$name}-#{$i}: $func($value, 450);
+}
+
+
+@mixin palette($base, $value) {
+  #{$base}: $value;
+  @include gen($base, 'lighten', $value, desaturate, 4);
+  @include gen($base, 'darken', $value, saturate, 4);
+  // @include accent($base, $value);
+}
+
+@mixin defineColor {
+  @include palette('red', #f44336);
+  @include palette('pink', #e91e63);
+  @include palette('purple', #9c27b0);
+}
