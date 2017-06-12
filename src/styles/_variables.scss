@@ -16,7 +16,7 @@
   --md-secondary-text: #757575;
   --md-divder-color: #bdbdbd;
 
-  @include defineColors;
+  @include defineColor;
 
   --black: #000;
   --white: #fff;

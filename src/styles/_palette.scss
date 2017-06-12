@@ -2,7 +2,7 @@
   @for $i from 1 through $num {
     --#{$base}-#{$name}-#{$i}: $func($value, 100 * $i);
   }
-  --#{$base}-#{$name}-#{$i}: $func($value, 450);
+  --#{$base}-#{$name}-#{$num}: $func($value, 450);
 }
 
 
